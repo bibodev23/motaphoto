@@ -1,0 +1,15 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 1440px;
+    border-top: 1px solid black;
+    height: 40px;
+    @include display-flex;
+    justify-content: center;
+    ul {
+        width: 620px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}

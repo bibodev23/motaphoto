@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    list-style: none;
+    text-decoration: none;;
+    color: black;
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    a{
+        font-weight: normal;
+        text-transform: uppercase;
+        transition: font-weight 0.5s ease-in-out;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+    button {
+        @include button-static;
+        &:hover {
+            @include button-hover;
+        }
+    }
+
+}

@@ -1,1 +1,169 @@
-/*# sourceMappingURL=theme.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeInUp {
+  animation: fadeInUp 1.3s ease-out both;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+* body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+* a {
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: font-weight 0.5s ease-in-out;
+}
+* a:hover {
+  font-weight: bold;
+}
+* button {
+  height: 50px;
+  width: 272px;
+  font-size: 12px;
+  background-color: #D8D8D8;
+  border-radius: 2px;
+  color: #000000;
+  border: none;
+}
+* button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+nav .burger {
+  display: none;
+}
+nav .navbar {
+  width: 1148px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+nav .menu-links ul {
+  display: flex;
+  gap: 40px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 1440px;
+  border-top: 1px solid black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer ul {
+  width: 620px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media all and (max-width: 440px) {
+  nav {
+    display: block;
+    max-width: 100%;
+    position: relative;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  nav .navbar {
+    max-width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+  nav .navbar .navbar-logo-burger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 40px;
+  }
+  nav .navbar .navbar-logo-burger #logo img {
+    height: 9px;
+    width: 138px;
+  }
+  nav .navbar .navbar-logo-burger .burger {
+    display: block;
+  }
+  nav .navbar .navbar-logo-burger .burger .hidden {
+    display: none;
+  }
+  nav .navbar .menu-links {
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    background-color: #E00000;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+  }
+  nav .navbar .menu-links ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav .navbar .menu-links ul a {
+    color: #ffffff;
+    font-size: 44px;
+  }
+  nav .navbar .menu-links.active {
+    transform: scaleY(1);
+    opacity: 1;
+    height: 93vh;
+    z-index: 1;
+  }
+  footer {
+    max-width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  footer .footer-links {
+    width: 100%;
+  }
+  footer .footer-links ul {
+    height: 208px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}/*# sourceMappingURL=theme.css.map */

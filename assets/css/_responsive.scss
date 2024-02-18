@@ -1,0 +1,73 @@
+@media all and (max-width: 440px) {
+    nav {
+        display: block;
+        max-width: 100%;
+        position: relative;
+        height: fit-content;
+        .navbar {
+            max-width: 100%;
+            height: fit-content;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 100%;
+            .navbar-logo-burger {
+                width: 100%;
+                @include display-flex;
+                justify-content: space-between;
+                height: 72px;
+                padding: 0 40px;
+                #logo img {
+                    height: 9px;
+                    width: 138px;
+                }
+                .burger {
+                    display: block;
+                    .hidden {
+                        display: none;
+                    }
+                }
+            }
+            .menu-links {
+                transform-origin: top;
+                transform: scaleY(0);
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+                overflow: hidden;
+                background-color: $color-menu-mobile-background;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 0;
+                ul {
+                    flex-direction: column;
+                    text-align: center;
+                    a {
+                        @include nav-links-mobile;
+                    }
+                }
+                &.active {
+                    transform: scaleY(1);
+                    opacity: 1;
+                    height: 93vh;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    footer {
+        max-width: 100%;
+        height: fit-content;
+        .footer-links {
+            width: 100%;
+            ul {
+                height: 208px;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

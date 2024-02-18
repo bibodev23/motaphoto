@@ -1,0 +1,24 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: fit-content;
+    margin: 0 auto;
+    .burger {
+        display: none;
+    }
+    .navbar {
+        width: 1148px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+    .menu-links {
+        ul {
+            display: flex;
+            gap: 40px;
+        }
+    }
+}

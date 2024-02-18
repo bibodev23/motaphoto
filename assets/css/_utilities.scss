@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$color-text: #000000;
+$color-menu-mobile-background: #E00000;
+$color-menu-mobile-text: #ffffff;
+
+$mobile-screen: 440px;
+
+@mixin display-flex{
+    display: flex;
+    align-items: center;
+}
+
+@mixin nav-links-mobile {
+    color: $color-menu-mobile-text;
+    font-size: 44px;
+}
+
+@mixin h2-desktop-style{
+    font-size: 66px;
+    font-style: italic;
+    line-height: 58px;
+}
+@mixin h2-mobile-style{
+    font-size: 46px;
+    font-style: italic;
+    line-height: 48px;
+}
+
+@mixin description-photo{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+@mixin button-static{
+    height: 50px;
+    width: 272px;
+    font-size: 12px;
+    background-color: #D8D8D8;
+    border-radius: 2px;
+    color: #000000;
+    border: none;
+}
+@mixin button-hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+@mixin button-modal {
+    height: 50px;
+    width: 272px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInUp {
+    animation: fadeInUp 1.3s ease-out both;
+}
