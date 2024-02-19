@@ -1,0 +1,88 @@
+footer {
+    .modal-container {
+        display: none;
+        &.active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            z-index: 100;
+            background-color: rgba(6, 1, 1, 0.335);
+            .modal {
+                position: relative;
+                height: 769px;
+                width: 597px;
+                border: 5px solid black;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 15px 0 10px;
+                .close-modal-btn {
+                    position: absolute;
+                    top: -80px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                }
+                .wpcf7 {
+                    padding-top: 30px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: end;
+                    form {
+                        margin: 0 auto;
+                        width: 263px;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 20px;
+                        p {
+                            color: white;
+                            min-height: 63px;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            label {
+                                height: 100%;
+                                font-size: 12px;
+                                font-family: "Poppins", sans-serif;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                            }
+                        }
+
+                        input, textarea {
+                            width: 100%;
+                            min-height: 40px;
+                            border-radius: 8px;
+                            border: 1px solid #b8bbc2;
+                        }
+                        textarea {
+                            height: 210px;
+                        }
+                        .wpcf7-submit {
+                            margin-top: -10px;
+                            @include button-static;
+                            max-width: 100%;
+                            transition: all 0.5s ease-in-out;
+                            &:hover {
+                                @include button-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
