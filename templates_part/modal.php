@@ -1,4 +1,4 @@
-<div class="modal-container">
+<div class="modal-container active">
 
     <div class="modal">
     <button class="close-modal-btn">X</button>

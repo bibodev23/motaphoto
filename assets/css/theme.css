@@ -13,6 +13,26 @@
   animation: fadeInUp 1.3s ease-out both;
 }
 
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -42,11 +62,12 @@
   border-radius: 2px;
   color: #000000;
   border: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 * button:hover {
   background-color: #000000;
   color: #ffffff;
+  cursor: pointer;
 }
 
 nav {
@@ -124,6 +145,7 @@ footer .modal-container.active .modal .close-modal-btn {
   width: 50px;
   height: 50px;
   border-radius: 100%;
+  font-size: large;
 }
 footer .modal-container.active .modal .wpcf7 {
   padding-top: 30px;
@@ -149,6 +171,15 @@ footer .modal-container.active .modal .wpcf7 form p {
   flex-direction: column;
   justify-content: space-between;
 }
+footer .modal-container.active .modal .wpcf7 form p:nth-of-type(1), footer .modal-container.active .modal .wpcf7 form p:nth-of-type(3) {
+  animation: fadeInLeft 1.3s ease-out both;
+}
+footer .modal-container.active .modal .wpcf7 form p:nth-of-type(2), footer .modal-container.active .modal .wpcf7 form p:nth-of-type(4) {
+  animation: fadeInRight 1.3s ease-out both;
+}
+footer .modal-container.active .modal .wpcf7 form p:nth-of-type(5) {
+  animation: fadeInUp 1.3s ease-out both;
+}
 footer .modal-container.active .modal .wpcf7 form p label {
   height: 100%;
   font-size: 12px;
@@ -162,6 +193,7 @@ footer .modal-container.active .modal .wpcf7 form input, footer .modal-container
   min-height: 40px;
   border-radius: 8px;
   border: 1px solid #b8bbc2;
+  padding: 15px;
 }
 footer .modal-container.active .modal .wpcf7 form textarea {
   height: 210px;
@@ -181,6 +213,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit {
 footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   background-color: #000000;
   color: #ffffff;
+  cursor: pointer;
 }
 
 @media all and (max-width: 440px) {

@@ -44,6 +44,7 @@ $mobile-screen: 440px;
 @mixin button-hover{
     background-color: #000000;
     color: #ffffff;
+    cursor: pointer;
 }
 
 @mixin button-modal {
@@ -64,4 +65,26 @@ $mobile-screen: 440px;
 
 .fadeInUp {
     animation: fadeInUp 1.3s ease-out both;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

@@ -30,6 +30,7 @@ footer {
                     width: 50px;
                     height: 50px;
                     border-radius: 100%;
+                    font-size: large;
                 }
                 .wpcf7 {
                     padding-top: 30px;
@@ -45,6 +46,7 @@ footer {
                         justify-content: flex-end;
                         align-items: center;
                         gap: 20px;
+                        
                         p {
                             color: white;
                             min-height: 63px;
@@ -52,6 +54,17 @@ footer {
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
+                            &:nth-of-type(1),
+                            &:nth-of-type(3) {
+                                animation: fadeInLeft 1.3s ease-out both;
+                            }
+                            &:nth-of-type(2),
+                            &:nth-of-type(4) {
+                                animation: fadeInRight 1.3s ease-out both;
+                            }
+                            &:nth-of-type(5) {
+                                animation: fadeInUp 1.3s ease-out both;
+                            }
                             label {
                                 height: 100%;
                                 font-size: 12px;
@@ -67,6 +80,7 @@ footer {
                             min-height: 40px;
                             border-radius: 8px;
                             border: 1px solid #b8bbc2;
+                            padding: 15px;
                         }
                         textarea {
                             height: 210px;
