@@ -64,6 +64,7 @@
         padding: 20px 40px;
         height: auto;
         .photo-content {
+            
             height: auto;
             flex-direction: column-reverse;
             gap: 20px;
@@ -82,6 +83,7 @@
         .photo-options {
             flex-direction: column;
             height: fit-content;
+            border: none;
             .option-contact {
                 border-top: 1px solid black;
                 border-bottom: 1px solid black;
@@ -98,6 +100,28 @@
             .option-arrow {
                 display: none;
             }
+        }
+    }
+
+    //photo-add
+    .photo-add-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .block-container {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            gap: 10px;
+            width: 100%;
+        }
+    }
+
+    .photo-block {
+        img {
+            height: 278px;
+            width: 317px;
         }
     }
 

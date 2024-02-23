@@ -47,6 +47,7 @@
         @include display-flex;
         justify-content: space-between;
         gap: 10px;
+        border-bottom: 1px solid black;
         .option-contact {
             height: 100%;
             width: 50%;
@@ -101,5 +102,25 @@
                 transition: all 0.3s ease-in-out;
             }
         }
+    }
+}
+.photo-add-container {
+    width: 100%;
+    padding: 100px 0 50px;
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        //valeur pourcentage non valide comme demandé sur la maquette
+        letter-spacing: 2px;
+    }
+    .block-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0 30px;
+    }
+    img {
+        max-width: 100%;
+        max-height: 100%;
     }
 }

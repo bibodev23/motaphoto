@@ -56,6 +56,10 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+* main {
+  max-width: 1148px;
+  margin: 0 auto;
+}
 * a {
   font-weight: normal;
   text-transform: uppercase;
@@ -178,6 +182,7 @@ footer ul {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  border-bottom: 1px solid black;
 }
 .single-photo-container .photo-options .option-contact {
   height: 100%;
@@ -231,6 +236,35 @@ footer ul {
   -o-object-position: center;
      object-position: center;
   transition: all 0.3s ease-in-out;
+}
+
+.photo-add-container {
+  width: 100%;
+  padding: 100px 0 50px;
+}
+.photo-add-container h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.photo-add-container .block-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0 30px;
+}
+.photo-add-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.photo-block img {
+  height: 495px;
+  width: 564px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 footer .modal-container {
@@ -426,6 +460,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     flex-direction: column;
     height: -moz-fit-content;
     height: fit-content;
+    border: none;
   }
   .single-photo-container .photo-options .option-contact {
     border-top: 1px solid black;
@@ -443,6 +478,23 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   }
   .single-photo-container .photo-options .option-arrow {
     display: none;
+  }
+  .photo-add-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-add-container .block-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+    width: 100%;
+  }
+  .photo-block img {
+    height: 278px;
+    width: 317px;
   }
   footer .modal-container.active {
     width: 100%;
