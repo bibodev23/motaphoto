@@ -33,6 +33,16 @@
     transform: translateX(0);
   }
 }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -49,7 +59,7 @@
 * a {
   font-weight: normal;
   text-transform: uppercase;
-  transition: font-weight 0.5s ease-in-out;
+  transition: font-weight 0.3s ease-in-out;
 }
 * a:hover {
   font-weight: bold;
@@ -81,6 +91,7 @@ nav {
 }
 nav .burger {
   display: none;
+  cursor: pointer;
 }
 nav .navbar {
   width: 1148px;
@@ -92,11 +103,13 @@ nav .navbar {
 nav .menu-links ul {
   display: flex;
   gap: 40px;
+  text-transform: uppercase;
+}
+nav .menu-links ul p {
+  cursor: pointer;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   width: 1440px;
   border-top: 1px solid black;
   height: 40px;
@@ -109,6 +122,115 @@ footer ul {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.single-photo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+}
+.single-photo-container .photo-content {
+  display: flex;
+  gap: 10px;
+  height: 80vh;
+}
+.single-photo-container .photo-content .photo-infos {
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+.single-photo-container .photo-content .photo-infos .infos-content {
+  max-width: 420px;
+  overflow: visible;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.single-photo-container .photo-content .photo-infos .infos-content h2 {
+  font-size: 66px;
+  font-style: italic;
+  line-height: 58px;
+  font-weight: 300;
+}
+.single-photo-container .photo-content .photo-image {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.single-photo-container .photo-content .photo-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.single-photo-container .photo-options {
+  height: 188px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.single-photo-container .photo-options .option-contact {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: lighter;
+}
+.single-photo-container .photo-options .option-contact p {
+  font-family: "Poppins", sans-serif;
+}
+.single-photo-container .photo-options .option-arrow {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  justify-content: start;
+  gap: 10px;
+  padding-top: 10px;
+}
+.single-photo-container .photo-options .option-arrow .arrows {
+  width: 81px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+.single-photo-container .photo-options .option-arrow .arrows img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 0px;
+}
+.single-photo-container .photo-options .option-arrow .arrows p {
+  cursor: pointer;
+}
+.single-photo-container .photo-options .option-arrow .arrows p.arrow-left:hover + img {
+  height: 71px;
+}
+.single-photo-container .photo-options .option-arrow .arrows p.arrow-right:hover + img {
+  height: 71px;
+}
+.single-photo-container .photo-options .option-arrow img {
+  width: 81px;
+  height: 71px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: all 0.3s ease-in-out;
 }
 
 footer .modal-container {
@@ -216,13 +338,14 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   cursor: pointer;
 }
 
-@media all and (max-width: 440px) {
+@media all and (max-width: 1024px) {
   nav {
     display: block;
     max-width: 100%;
     position: relative;
     height: -moz-fit-content;
     height: fit-content;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
   }
   nav .navbar {
     max-width: 100%;
@@ -267,7 +390,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     flex-direction: column;
     text-align: center;
   }
-  nav .navbar .menu-links ul a {
+  nav .navbar .menu-links ul a, nav .navbar .menu-links ul p {
     color: #ffffff;
     font-size: 44px;
   }
@@ -277,12 +400,56 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     height: 93vh;
     z-index: 1;
   }
+  .single-photo-container {
+    width: 100vw;
+    padding: 20px 40px;
+    height: auto;
+  }
+  .single-photo-container .photo-content {
+    height: auto;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .single-photo-container .photo-content .photo-infos {
+    width: 100%;
+    border: none;
+  }
+  .single-photo-container .photo-content .photo-infos h2#photo-title {
+    font-size: 46px;
+    font-style: italic;
+    line-height: 48px;
+  }
+  .single-photo-container .photo-content .photo-image {
+    width: 100%;
+  }
+  .single-photo-container .photo-options {
+    flex-direction: column;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .single-photo-container .photo-options .option-contact {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 100vw;
+    flex-direction: column;
+    gap: 20px;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 30px 40px 25px;
+    align-items: start;
+  }
+  .single-photo-container .photo-options .option-contact button {
+    width: 100%;
+  }
+  .single-photo-container .photo-options .option-arrow {
+    display: none;
+  }
   footer .modal-container.active {
     width: 100%;
     height: 100%;
   }
   footer .modal-container.active .modal {
-    height: 583px;
+    height: auto;
     width: 286px;
     justify-content: baseline;
     padding: 15px 0;

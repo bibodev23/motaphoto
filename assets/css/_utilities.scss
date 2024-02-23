@@ -5,6 +5,8 @@ $color-menu-mobile-background: #E00000;
 $color-menu-mobile-text: #ffffff;
 
 $mobile-screen: 440px;
+$tablet-screen: 768px;
+$small-desktop-screen: 1024px;
 
 @mixin display-flex{
     display: flex;
@@ -86,5 +88,16 @@ $mobile-screen: 440px;
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -7,6 +7,7 @@ nav {
     margin: 0 auto;
     .burger {
         display: none;
+        cursor: pointer;
     }
     .navbar {
         width: 1148px;
@@ -19,6 +20,11 @@ nav {
         ul {
             display: flex;
             gap: 40px;
+            text-transform: uppercase;
+            p {
+                cursor: pointer;
+
+            }
         }
     }
 }

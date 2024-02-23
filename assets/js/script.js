@@ -24,13 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     //MODAL
-    const buttonModal = document.querySelector(".modal-link");
-    buttonModal.addEventListener("click", () => {
-        document.querySelector("footer .modal-container").classList.toggle("active");
-    })
+    const buttonsModal = document.querySelectorAll(".modal-link");
+    const modal = document.querySelector(".modal-container");
+    const refPhoto = document.querySelector(".reference");
+    const inputRef = document.querySelector(".modal-container .input-ref input");
+
+    buttonsModal.forEach((button) => {
+        button.addEventListener("click", () => {
+            modal.classList.add("active");
+            inputRef.value = refPhoto.textContent;
+            inputRef.value = inputRef.value.toUpperCase();
+        });
+    });
+
+
+
    const buttonCloseModal = document.querySelector("footer .modal-container .close-modal-btn");
    buttonCloseModal.addEventListener("click", () => {
-       document.querySelector("footer .modal-container").classList.toggle("active");
+       document.querySelector("footer .modal-container").classList.remove("active");
    })
+
+   const leftArrow = document.querySelector(".arrow-left a");
+   const rightArrow = document.querySelector(".arrow-right a");
+   const leftArrowIcon = "&#x27F5";
+   const rightArrowIcon = "&#x27F6";
+   // mettre une condition en place pour éviter l'erreur pour le premier et dernier article
+   if (leftArrow) {
+    leftArrow.innerHTML = leftArrowIcon;
+   } 
+  
+   if (rightArrow) {
+    rightArrow.innerHTML = rightArrowIcon;
+   }
 });
 

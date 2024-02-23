@@ -23,7 +23,7 @@ add_theme_support('custom-logo');
     //Ajout du lien pour la modal
 function add_modal_link( $items, $args ) {
     if ( $args->theme_location == 'main-menu' ) {
-        $items .= '<li><a href="#" class="modal-link">Contact</a></li>';
+        $items .= '<li><p class="modal-link">Contact</p></li>';
     }
     return $items;
 }

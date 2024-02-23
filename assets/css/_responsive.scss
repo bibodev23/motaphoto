@@ -1,9 +1,11 @@
-@media all and (max-width: 440px) {
+@media all and (max-width: 1024px) {
+    //NAVIGATION
     nav {
         display: block;
         max-width: 100%;
         position: relative;
         height: fit-content;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
         .navbar {
             max-width: 100%;
             height: fit-content;
@@ -42,7 +44,7 @@
                 ul {
                     flex-direction: column;
                     text-align: center;
-                    a {
+                    a,p {
                         @include nav-links-mobile;
                     }
                 }
@@ -55,11 +57,57 @@
             }
         }
     }
+
+    //SINGLE PAGE
+    .single-photo-container {
+        width: 100vw;
+        padding: 20px 40px;
+        height: auto;
+        .photo-content {
+            height: auto;
+            flex-direction: column-reverse;
+            gap: 20px;
+            .photo-infos {
+                width: 100%;
+                border: none;
+                h2#photo-title {
+                    @include h2-mobile-style;
+                }
+            }
+            .photo-image {
+                width: 100%;
+            }
+        }
+        
+        .photo-options {
+            flex-direction: column;
+            height: fit-content;
+            .option-contact {
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                width: 100vw;
+                flex-direction: column;
+                gap: 20px;
+                height: fit-content;
+                padding: 30px 40px 25px;
+                align-items: start;
+                button {
+                    width: 100%;
+                }
+            }
+            .option-arrow {
+                display: none;
+            }
+        }
+    }
+
+
+    //FOOTER
     footer .modal-container.active {
         width: 100%;
         height: 100%;
         .modal {
-            height: 583px;
+            height: auto;
             width: 286px;
             justify-content: baseline;
             padding: 15px 0;
