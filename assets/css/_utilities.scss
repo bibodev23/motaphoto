@@ -29,6 +29,10 @@ $small-desktop-screen: 1024px;
     line-height: 48px;
 }
 
+.small-font-size h2 {
+    font-size: 32px;
+}
+
 @mixin description-photo{
     font-size: 14px;
     text-transform: uppercase;

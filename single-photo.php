@@ -22,7 +22,7 @@ while (have_posts()) : the_post();
 ?>
 
 	<div class="single-photo-container">
-		<div class="photo-content">
+		<div class="photo-content" id="<?php echo $post_id; ?>">
 			<div class="photo-infos">
 				<div class="infos-content">
 					<h2 id="photo-title"><?php echo the_title(); ?></h2>

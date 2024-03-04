@@ -71,6 +71,7 @@
             .photo-infos {
                 width: 100%;
                 border: none;
+                overflow: scroll;
                 h2#photo-title {
                     @include h2-mobile-style;
                 }
@@ -125,6 +126,13 @@
         }
     }
 
+    .hero {
+                height: 253px;
+        &::before {
+            font-size: 28px;
+            -webkit-text-stroke: 1px white;
+        }
+    }
 
     //FOOTER
     footer .modal-container.active {
