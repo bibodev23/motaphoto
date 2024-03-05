@@ -55,5 +55,35 @@ document.addEventListener("DOMContentLoaded", () => {
         rightArrow.innerHTML = rightArrowIcon;
     }
 
+    //HOME PAGE BUTTON LOAD MORE
+    jQuery(".voir-plus").click(function(e) {
+        e.preventDefault();
+        const posts = document.querySelectorAll(".home-list-photo .photo-block");
+        const idPostsDisplayed = [];
+        posts.forEach((post) => {
+            console.log(post);
+            console.log(post.id);
+            idPostsDisplayed.push(post.id);
+        });
+        console.log(idPostsDisplayed);
+        const ajaxurl = jQuery(this).data("ajaxurl");
+        const data = {
+            'action': 'load_more_posts',
+            'idPostsDisplayed': idPostsDisplayed,
+        };
+        fetch(ajaxurl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Cache-Control': 'no-cache',
+            },
+            body: new URLSearchParams(data),
+        })
+        .then(response => response.json()
+        .then(data => {
+            jQuery('.home-list-photo').append(data.data);
+        }));
+    })
+
 });
 

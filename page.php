@@ -31,16 +31,14 @@ get_header() ?>
 </div>
 
 <div class="home-container">
-	<div class="home-button-filter">
-
+	<div class="home-button-filter-order">
 	</div>
 	<div class="home-list-photo">
 		<?php
 		// 1. On définit les arguments pour définir ce que l'on souhaite récupérer
 		$args = array(
 			'post_type' => 'photo',
-			//Récupération de touts les posts avec -1
-			'posts_per_page' => -1,
+			'posts_per_page' => 8,
 		);
 
 		// 2. On exécute la WP Query
@@ -63,7 +61,7 @@ get_header() ?>
 	</div>
 
 	<div class="home-button-load-more">
-
+		<button id="voir-plus" class="voir-plus" data-posts-per-page="8" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">Voir plus</button>
 	</div>
 
 </div>

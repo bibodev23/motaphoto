@@ -41,7 +41,6 @@
     gap: 50px;
     padding: 100px 0;
     .home-button-filter, .home-button-load-more{
-        border: 1px solid rgb(25, 0, 255);
         height: 43px;
         width: 100%;
     }
@@ -52,6 +51,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    }
+    .home-button-load-more {
+        display: flex;
+        justify-content: center;
     }
     
 }
