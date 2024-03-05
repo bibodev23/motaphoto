@@ -30,3 +30,28 @@
         }
     }
 }
+
+.home-container{
+    width: 1148px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 100px 0;
+    .home-button-filter, .home-button-load-more{
+        border: 1px solid rgb(25, 0, 255);
+        height: 43px;
+        width: 100%;
+    }
+    .home-list-photo{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    }
+    
+}

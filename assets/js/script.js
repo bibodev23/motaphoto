@@ -55,6 +55,5 @@ document.addEventListener("DOMContentLoaded", () => {
         rightArrow.innerHTML = rightArrowIcon;
     }
 
-    //HOME PAGE
 });
 

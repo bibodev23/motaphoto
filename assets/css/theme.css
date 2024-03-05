@@ -137,7 +137,8 @@ footer ul {
 }
 
 .single-photo-container {
-  width: 100%;
+  max-width: 1148px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -415,6 +416,30 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
      object-position: center;
 }
 
+.home-container {
+  width: 1148px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 0;
+}
+.home-container .home-button-filter, .home-container .home-button-load-more {
+  border: 1px solid rgb(25, 0, 255);
+  height: 43px;
+  width: 100%;
+}
+.home-container .home-list-photo {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
 @media all and (max-width: 1024px) {
   nav {
     display: block;
@@ -546,6 +571,17 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   .hero::before {
     font-size: 28px;
     -webkit-text-stroke: 1px white;
+  }
+  .home-container {
+    width: 100vw;
+    padding: 50px 0;
+  }
+  .home-container .home-button-filter {
+    width: 100%;
+  }
+  .home-container .home-list-photo {
+    flex-direction: column;
+    align-items: center;
   }
   footer .modal-container.active {
     width: 100%;
