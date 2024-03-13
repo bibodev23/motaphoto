@@ -31,8 +31,43 @@ get_header() ?>
 </div>
 
 <div class="home-container">
-	<div class="home-button-filter-order">
+	<div class="filter-container">
+		<div class="category-format-content">
+			<?php
+			$allTaxo = get_taxonomies(['_builtin' => false]);
+			foreach ($allTaxo as $taxo) {
+
+				$terms = get_terms($taxo);
+				echo '<div class=" taxonomy ' . $taxo . '"data-taxonomy="' . $taxo . '" data-ajaxurl="' . admin_url('admin-ajax.php') . '">';
+				switch ($taxo) {
+					case 'categorie':
+						$taxo = 'Catégories';
+						break;
+					case 'format':
+						$taxo = 'Formats';
+						break;
+				}
+				echo '<h3 class="title-taxo"> <span>' . $taxo . '</span><img src="' . get_template_directory_uri() . '/assets/img/arrow-down.svg" class="arrow-down"></h3>';
+				echo '<ul>';
+				foreach ($terms as $term) {
+					echo '<li class="term-item">' . $term->name . '</li>';
+				}
+				echo '</div>';
+			}
+			?>
+		</div>
+		<div class="order-content">
+			<div class="taxonomy order" data-taxonomy="order" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">
+				<h3><span>Trier par</span> <img src=" <?php echo get_template_directory_uri() . '/assets/img/arrow-down.svg' ?>" class="arrow-down"></h3>
+				<ul>
+					<li data-order="DSC">À partir des plus récentes</li>
+					<li data-order="ASC">À partir des plus anciennes</li>
+				</ul>
+			</div>
+
+		</div>
 	</div>
+
 	<div class="home-list-photo">
 		<?php
 		// 1. On définit les arguments pour définir ce que l'on souhaite récupérer
@@ -53,6 +88,7 @@ get_header() ?>
 
 		<?php
 			endwhile;
+
 		endif;
 
 		// 4. On réinitialise à la requête principale (important)

@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buttonsModal.forEach((button) => {
         button.addEventListener("click", () => {
-            modal.classList.add("active");
-            inputRef.value = refPhoto.textContent;
+            modal.classList.toggle("active");
+            inputRef.value = refPhoto ? refPhoto.textContent : "";
             inputRef.value = inputRef.value.toUpperCase();
             const buttonCloseModal = document.querySelector("footer .modal-container .close-modal-btn");
             buttonCloseModal.addEventListener("click", () => {
@@ -85,5 +85,62 @@ document.addEventListener("DOMContentLoaded", () => {
         }));
     })
 
+    //HOME PAGE FILTER
+    const allTaxonomy = document.querySelectorAll(".taxonomy");
+    allTaxonomy.forEach(element => {
+        const titleContainer = element.querySelector("h3");
+        const titleText = titleContainer.querySelector("span");
+        const initialText = titleText.textContent;
+        console.log(initialText);
+        const arrow = titleContainer.querySelector("img");
+        const ul = element.querySelector("ul");
+        titleContainer.addEventListener("click", () => {
+            ul.classList.toggle("active");
+            arrow.classList.toggle("active");
+            titleContainer.classList.toggle("active");
+        })
+        const allTerm = element.querySelectorAll("ul li");
+        const taxo = element.dataset.taxonomy;
+        titleText.textContent = taxo;
+        allTerm.forEach(term => {
+            term.addEventListener("click", () => {
+                ul.classList.toggle("active");
+                titleContainer.classList.toggle("active");
+                titleText.textContent = term.innerHTML;
+                arrow.classList.toggle("active");
+                const ajaxurl = element.dataset.ajaxurl;
+                console.log(ajaxurl);
+                console.log(taxo);
+                console.log((term.innerHTML).toLowerCase());
+                const data = term.dataset.order ? {
+                    'action': 'filter',
+                    'order': term.dataset.order,
+                } : {
+                    'action': 'filter',
+                    'taxonomy': taxo,
+                    'term': (term.innerHTML).toLowerCase(),
+                }
+                if (term.dataset.order) {
+                    console.log(term.dataset.order);
+                }
+                console.log(data);
+                
+                fetch(ajaxurl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Cache-Control': 'no-cache'
+                    },
+                    body: new URLSearchParams(data),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        jQuery('.home-list-photo').html(data.data)
+                    });
+            })
+        })
+    });
+    
 });
 

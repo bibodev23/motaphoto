@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .small-font-size h2 {
   font-size: 32px;
 }
@@ -304,7 +304,7 @@ footer .modal-container.active .modal {
 }
 footer .modal-container.active .modal .close-modal-btn {
   position: absolute;
-  top: -80px;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
@@ -426,8 +426,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   gap: 50px;
   padding: 100px 0;
 }
-.home-container .home-button-filter, .home-container .home-button-load-more {
-  height: 43px;
+.home-container .home-button-filter-order, .home-container .home-button-load-more {
   width: 100%;
 }
 .home-container .home-list-photo {
@@ -438,9 +437,121 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   flex-wrap: wrap;
   gap: 15px;
 }
+.home-container .home-button-filter-order {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.home-container .home-button-filter-order div.category, .home-container .home-button-filter-order div.format, .home-container .home-button-filter-order div.order {
+  width: 260px;
+  height: 43px;
+  border-radius: 8px;
+  padding: 0 18px;
+  border: 1px solid #B8BBC2;
+}
+.home-container .home-button-filter-order select {
+  min-width: 100%;
+  min-height: 100%;
+  border: none;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.home-container .home-button-filter-order select:focus {
+  outline: none;
+}
+.home-container .home-button-filter-order .filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  padding-right: 15px;
+}
+.home-container .home-button-filter-order .order-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 50%;
+}
 .home-container .home-button-load-more {
   display: flex;
   justify-content: center;
+}
+
+.filter-container {
+  width: 100%;
+  display: flex;
+}
+.filter-container h3 {
+  width: 260px;
+  border: 1px solid #B8BBC2;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.filter-container h3:hover {
+  border: 1px solid blue;
+  border-radius: 8px;
+}
+.filter-container h3.active {
+  border: 1px solid blue;
+  border-radius: 8px 8px 0 0;
+}
+.filter-container img {
+  height: 20px;
+  width: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.filter-container img.active {
+  transform: rotate(180deg);
+}
+.filter-container .category-format-content, .filter-container .order-content {
+  display: flex;
+  width: 50%;
+  gap: 35px;
+}
+.filter-container .order-content {
+  justify-content: end;
+}
+.filter-container ul {
+  width: 260px;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.filter-container ul.active {
+  height: 150px;
+  overflow: scroll;
+}
+.filter-container ul li {
+  width: 100%;
+  padding: 11px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.filter-container ul li:hover {
+  background-color: red;
+  color: white;
 }
 
 @media all and (max-width: 1024px) {
@@ -495,7 +606,8 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     flex-direction: column;
     text-align: center;
   }
-  nav .navbar .menu-links ul a, nav .navbar .menu-links ul p {
+  nav .navbar .menu-links ul a,
+  nav .navbar .menu-links ul p {
     color: #ffffff;
     font-size: 44px;
   }
@@ -577,10 +689,29 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   }
   .home-container {
     width: 100vw;
-    padding: 50px 0;
+    padding: 25px 0;
+    gap: 25px;
   }
-  .home-container .home-button-filter {
+  .home-container .filter-container {
     width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-container .filter-container div {
+    width: 100%;
+  }
+  .home-container .filter-container .category-format-content, .home-container .filter-container .order-content {
+    flex-direction: column-reverse;
+    gap: 5px;
+  }
+  .home-container .filter-container .category-format-content .taxonomy, .home-container .filter-container .order-content .taxonomy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .home-container .filter-container .category-format-content .taxonomy ul.active, .home-container .filter-container .order-content .taxonomy ul.active {
+    height: 100px;
   }
   .home-container .home-list-photo {
     flex-direction: column;
@@ -595,6 +726,12 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     width: 286px;
     justify-content: baseline;
     padding: 15px 0;
+  }
+  footer .modal-container.active .modal .close-modal-btn {
+    top: -40px;
+    width: 25px;
+    height: 25px;
+    font-size: small;
   }
   footer .modal-container.active .modal .wpcf7 form {
     height: -moz-fit-content;

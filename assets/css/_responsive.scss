@@ -44,7 +44,8 @@
                 ul {
                     flex-direction: column;
                     text-align: center;
-                    a,p {
+                    a,
+                    p {
                         @include nav-links-mobile;
                     }
                 }
@@ -79,7 +80,7 @@
                 width: 100%;
             }
         }
-        
+
         .photo-options {
             flex-direction: column;
             height: fit-content;
@@ -126,23 +127,47 @@
     }
 
     .hero {
-                height: 253px;
+        height: 253px;
         &::before {
             font-size: 28px;
             -webkit-text-stroke: 1px white;
         }
     }
-
+    //HOME PAGE
     .home-container {
         width: 100vw;
-        padding: 50px 0;
-        .home-button-filter {
-            width: 100%;        }
+        padding: 25px 0;
+        gap: 25px;
+        .filter-container {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            div {
+                width: 100%;
+            }
+            
+            .category-format-content, .order-content {
+                flex-direction: column-reverse;
+                gap: 5px;
+                .taxonomy {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 5px;
+                    ul {
+                        &.active {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
         .home-list-photo {
             flex-direction: column;
             align-items: center;
         }
     }
+    
 
     //FOOTER
     footer .modal-container.active {
@@ -153,6 +178,12 @@
             width: 286px;
             justify-content: baseline;
             padding: 15px 0;
+            .close-modal-btn {
+                top: -40px;
+                width: 25px;
+                height: 25px;
+                font-size: small;
+            }
             .wpcf7 {
                 form {
                     height: fit-content;

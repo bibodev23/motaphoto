@@ -40,8 +40,7 @@
     justify-content: center;
     gap: 50px;
     padding: 100px 0;
-    .home-button-filter, .home-button-load-more{
-        height: 43px;
+    .home-button-filter-order, .home-button-load-more{
         width: 100%;
     }
     .home-list-photo{
@@ -51,6 +50,42 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    }
+    .home-button-filter-order{
+        @include display-flex;
+        width: 100%;
+        div.category, div.format ,div.order {
+            width: 260px;
+            height: 43px;
+            border-radius: 8px;
+            padding: 0 18px;
+            border: 1px solid $color-ligne-button-filter;
+        }
+        select {
+            min-width: 100%;
+            min-height: 100%;
+            border: none;
+            font-family: 'Poppins';
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            &:focus {
+                outline: none;
+            }
+
+        }
+        .filter {
+            @include display-flex;
+            justify-content: space-between;
+            width: 50%;
+            padding-right: 15px;
+        }
+        .order-container {
+            @include display-flex;
+            justify-content: end;
+            width: 50%;
+        }
     }
     .home-button-load-more {
         display: flex;
