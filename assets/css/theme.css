@@ -66,6 +66,7 @@
 }
 * main {
   width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
 }
 * a {
@@ -101,10 +102,6 @@ nav {
   height: fit-content;
   margin: 0 auto;
 }
-nav .burger {
-  display: none;
-  cursor: pointer;
-}
 nav .navbar {
   width: 1148px;
   display: flex;
@@ -112,13 +109,20 @@ nav .navbar {
   align-items: center;
   height: 80px;
 }
+nav .burger {
+  display: none;
+  cursor: pointer;
+}
 nav .menu-links ul {
   display: flex;
   gap: 40px;
   text-transform: uppercase;
 }
-nav .menu-links ul p {
+nav .menu-links ul p, nav .menu-links ul a {
   cursor: pointer;
+}
+nav .menu-links ul p:hover, nav .menu-links ul a:hover {
+  font-weight: bold;
 }
 
 footer {
@@ -167,6 +171,7 @@ footer ul {
   justify-content: end;
   font-size: 14px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .single-photo-container .photo-content .photo-infos .infos-content h2 {
   font-size: 66px;
@@ -199,10 +204,11 @@ footer ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: lighter;
 }
 .single-photo-container .photo-options .option-contact p {
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
 }
 .single-photo-container .photo-options .option-arrow {
   position: relative;
@@ -248,14 +254,15 @@ footer ul {
 }
 
 .photo-add-container {
-  width: 100%;
+  max-width: 1148px;
+  margin: 0 auto;
   padding: 100px 0 50px;
 }
 .photo-add-container h3 {
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
 }
 .photo-add-container .block-container {
   display: flex;
@@ -267,13 +274,72 @@ footer ul {
   max-height: 100%;
 }
 
-.photo-block img {
+.photo-block {
+  position: relative;
   height: 495px;
   width: 564px;
+}
+.photo-block > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.photo-block img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+.photo-block .photo-block-hover {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+}
+.photo-block .photo-block-hover .icon-lightbox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding: 15px 25px;
+  opacity: 1;
+}
+.photo-block .photo-block-hover .icon-lightbox img {
+  height: 34px;
+  width: 34px;
+  cursor: pointer;
+}
+.photo-block .photo-block-hover .icon-more-info {
+  width: 46px;
+  height: 31px;
+  cursor: pointer;
+}
+.photo-block .photo-block-hover .photo-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+.photo-block .photo-block-hover .photo-info span, .photo-block .photo-block-hover .photo-info p, .photo-block .photo-block-hover .photo-info a {
+  color: white;
+  text-transform: uppercase;
+}
+.photo-block:hover .photo-block-hover {
+  display: flex;
+  z-index: 1;
+  opacity: 1;
 }
 
 footer .modal-container {
@@ -385,6 +451,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   height: 962px;
   margin: 0 auto;
   position: relative;
+  animation: fadeInLeft 1.3s ease-out;
 }
 .hero::before {
   content: "photographe event";
@@ -402,6 +469,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInRight 1.3s ease-out;
 }
 .hero .photo-block {
   width: 100%;
@@ -415,6 +483,9 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   -o-object-position: center;
      object-position: center;
 }
+.hero .photo-block-hover {
+  display: none;
+}
 
 .home-container {
   width: 1148px;
@@ -426,9 +497,6 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   gap: 50px;
   padding: 100px 0;
 }
-.home-container .home-button-filter-order, .home-container .home-button-load-more {
-  width: 100%;
-}
 .home-container .home-list-photo {
   width: 100%;
   margin: 0 auto;
@@ -437,12 +505,24 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   flex-wrap: wrap;
   gap: 15px;
 }
+.home-container .home-list-photo .photo-block .photo-block-hover .icon-lightbox {
+  opacity: 1;
+}
+.home-container .home-list-photo .photo-block .photo-block-hover .icon-lightbox img {
+  cursor: pointer;
+}
+.home-container .home-button-filter-order,
+.home-container .home-button-load-more {
+  width: 100%;
+}
 .home-container .home-button-filter-order {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.home-container .home-button-filter-order div.category, .home-container .home-button-filter-order div.format, .home-container .home-button-filter-order div.order {
+.home-container .home-button-filter-order div.category,
+.home-container .home-button-filter-order div.format,
+.home-container .home-button-filter-order div.order {
   width: 260px;
   height: 43px;
   border-radius: 8px;
@@ -537,6 +617,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
 }
 .filter-container ul li {
   width: 100%;
+  height: 40px;
   padding: 11px 18px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -552,6 +633,90 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
 .filter-container ul li:hover {
   background-color: red;
   color: white;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 100;
+}
+.lightbox a,
+.lightbox p,
+.lightbox span {
+  color: white;
+}
+.lightbox .lightbox-content {
+  padding: 15px 25px;
+  position: relative;
+  width: 100%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lightbox .lightbox-content .lightbox-image {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox .lightbox-content .lightbox-image img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+.lightbox .lightbox-content .arrow {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 15%;
+  cursor: pointer;
+}
+.lightbox .lightbox-content .arrow span:first-child {
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  transform: scale(3);
+}
+.lightbox .lightbox-content .arrow span:last-child {
+  position: absolute;
+  bottom: 10px;
+  right: 10%;
+  transform: scale(3);
+}
+.lightbox .lightbox-content .arrow.hidden {
+  opacity: 0;
+  cursor: default;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox .image-info {
+  height: 5%;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  text-transform: uppercase;
+}
+.lightbox .close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  cursor: pointer;
+  z-index: 1;
+  transform: scale(1.5);
 }
 
 @media all and (max-width: 1024px) {
@@ -696,6 +861,7 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
   }
   .home-container .filter-container div {
     width: 100%;
@@ -708,7 +874,6 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
   }
   .home-container .filter-container .category-format-content .taxonomy ul.active, .home-container .filter-container .order-content .taxonomy ul.active {
     height: 100px;
@@ -717,6 +882,54 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
     flex-direction: column;
     align-items: center;
   }
+  .photo-block {
+    height: 278px;
+    width: 317px;
+  }
+  .lightbox {
+    padding-bottom: 20px;
+  }
+  .lightbox .lightbox-content {
+    flex-direction: column;
+  }
+  .lightbox .lightbox-content .lightbox-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .lightbox .lightbox-content .lightbox-image img {
+    max-height: 90%;
+    max-width: 90%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .lightbox .lightbox-content .arrow {
+    position: absolute;
+    bottom: 60px;
+    z-index: 1;
+    font-size: 30px;
+  }
+  .lightbox .lightbox-content .arrow p {
+    display: none;
+  }
+  .lightbox .lightbox-content .arrow span:first-child {
+    left: -50px;
+    transform: scale(1);
+  }
+  .lightbox .lightbox-content .arrow span:last-child {
+    right: -50px;
+    transform: scale(1);
+  }
+  .lightbox .image-info {
+    padding: 0;
+    width: 70%;
+  }
+  .page-privacy-policy, .page-mentions-legales {
+    padding: 20px;
+    text-align: justify;
+  }
   footer .modal-container.active {
     width: 100%;
     height: 100%;
@@ -724,7 +937,6 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
   footer .modal-container.active .modal {
     height: auto;
     width: 286px;
-    justify-content: baseline;
     padding: 15px 0;
   }
   footer .modal-container.active .modal .close-modal-btn {

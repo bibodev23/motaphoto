@@ -54,9 +54,10 @@
             width: 50%;
             @include display-flex;
             justify-content: space-between;
-            font-weight: lighter;
             p{
                 font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                font-weight: 300;
             }
         }
         .option-arrow {
@@ -106,14 +107,14 @@
     }
 }
 .photo-add-container {
-    width: 100%;
+    max-width: 1148px;
+    margin: 0 auto;
     padding: 100px 0 50px;
     h3 {
         font-size: 18px;
         font-weight: 400;
         text-transform: uppercase;
-        //valeur pourcentage non valide comme demandé sur la maquette
-        letter-spacing: 2px;
+        letter-spacing: 0.1em;
     }
     .block-container {
         display: flex;
