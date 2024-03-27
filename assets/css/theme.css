@@ -57,7 +57,7 @@
   color: black;
 }
 * body {
-  max-width: 1440px;
+  width: 100vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -190,7 +190,7 @@ footer ul {
   max-height: 100%;
 }
 .single-photo-container .photo-options {
-  height: 188px;
+  height: 118px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -219,7 +219,6 @@ footer ul {
   align-items: end;
   justify-content: start;
   gap: 10px;
-  padding-top: 10px;
 }
 .single-photo-container .photo-options .option-arrow .arrows {
   width: 81px;
@@ -237,8 +236,15 @@ footer ul {
 .single-photo-container .photo-options .option-arrow .arrows p {
   cursor: pointer;
 }
+.single-photo-container .photo-options .option-arrow .arrows p a {
+  position: absolute;
+  bottom: 25px;
+}
 .single-photo-container .photo-options .option-arrow .arrows p.arrow-left:hover + img {
   height: 71px;
+}
+.single-photo-container .photo-options .option-arrow .arrows p.arrow-right a {
+  right: 0;
 }
 .single-photo-container .photo-options .option-arrow .arrows p.arrow-right:hover + img {
   height: 71px;
@@ -474,6 +480,9 @@ footer .modal-container.active .modal .wpcf7 form .wpcf7-submit:hover {
 .hero .photo-block {
   width: 100%;
   height: 100%;
+}
+.hero .photo-block::attr(id) {
+  display: none;
 }
 .hero .photo-block img {
   height: 100%;

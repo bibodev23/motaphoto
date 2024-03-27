@@ -31,7 +31,7 @@ get_header() ?>
 			$allTaxo = get_taxonomies(['_builtin' => false]);
 			foreach ($allTaxo as $taxo) {
 				$terms = get_terms($taxo);
-				echo '<div class=" taxonomy ' . $taxo . '"data-taxonomy="' . $taxo . '" data-ajaxurl="' . admin_url('admin-ajax.php') . '">';
+				echo '<div class=" taxonomy ' . $taxo . '" data-taxonomy="' . $taxo . '" data-ajaxurl="' . admin_url('admin-ajax.php') . '">';
 				switch ($taxo) {
 					case 'categorie':
 						$taxo = 'Catégories';
@@ -46,6 +46,7 @@ get_header() ?>
 				foreach ($terms as $term) {
 					echo '<li class="term-item">' . $term->name . '</li>';
 				}
+				echo '</ul>';
 				echo '</div>';
 			}
 			?>

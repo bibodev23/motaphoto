@@ -43,7 +43,7 @@
         }
     }
     .photo-options {
-        height: 188px;
+        height: 118px;
         width: 100%;
         @include display-flex;
         justify-content: space-between;
@@ -69,7 +69,6 @@
             align-items: end;
             justify-content: start;
             gap: 10px;
-            padding-top: 10px;
             .arrows {         
                 width: 81px;
                 display: flex;
@@ -84,12 +83,19 @@
                 }
                 p {
                     cursor: pointer;
+                    a {
+                        position: absolute;
+                        bottom: 25px;
+                    }
                     &.arrow-left {
                         &:hover + img {
                             height: 71px;
                         }
                     }
                     &.arrow-right {
+                        a {
+                            right: 0;
+                        }
                         &:hover + img {
                             height: 71px;
                         }

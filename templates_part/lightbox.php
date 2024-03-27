@@ -2,13 +2,13 @@
     <p class="close-lightbox">X</p>
     <div class="lightbox-content">
         <div class="lightbox-arrow-previous arrow">
-            <span>&#10229</span><p> Précédente</p>
+            <span>&#10229;</span><p> Précédente</p>
         </div>
         <div class="lightbox-image">
-            <img src="" alt="" a>
+            <img src="<?php echo get_template_directory_uri(); ?>" alt=""/>
         </div>
         <div class="lightbox-arrow-next arrow">
-            <p>Suivante </p><span>&#10230</span>
+            <p>Suivante </p><span>&#10230;</span>
         </div>
     </div>
 
